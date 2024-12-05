@@ -4,6 +4,7 @@ import sqlite3
 import os
 from dotenv import load_dotenv
 from flasgger import Swagger
+from db import init_db
 
 load_dotenv()
 
@@ -166,4 +167,5 @@ def restricted():
 
 
 if __name__ == '__main__':
+    init_db()
     app.run(debug=True)
