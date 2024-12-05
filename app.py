@@ -17,6 +17,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 app.config['JWT_SECRET_KEY'] = SECRET_KEY
 jwt = JWTManager(app)
 
+init_db()
+
 @app.route('/register', methods=['POST'])
 def register():
     """
@@ -167,5 +169,4 @@ def restricted():
 
 
 if __name__ == '__main__':
-    init_db()
     app.run(debug=True, host='0.0.0.0')
