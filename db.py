@@ -18,14 +18,14 @@ def init_db():
     )
     """)
     
-    sample_data = [
+    '''sample_data = [
         ("user_1", "1234"),
         ("user_2", "1234")
     ]
     cursor.executemany("""
     INSERT INTO users (username, password)
     VALUES (?, ?)
-    """, sample_data)
+    """, sample_data)'''
     
     conn.commit()
     conn.close()
