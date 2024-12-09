@@ -9,13 +9,37 @@ from db import init_db
 load_dotenv()
 
 app = Flask(__name__)
-swagger = Swagger(app)
 
 DATABASE = os.getenv('DATABASE')
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 app.config['JWT_SECRET_KEY'] = SECRET_KEY
 jwt = JWTManager(app)
+
+swagger_config = {
+    "headers": [],
+    "specs": [
+        {
+            "endpoint": "apispec",
+            "route": "/apispec.json",
+            "rule_filter": lambda rule: True,
+            "model_filter": lambda tag: True,
+        }
+    ],
+    "static_url_path": "/flasgger_static",
+    "swagger_ui": True,
+    "specs_route": "/apidocs/",
+    "securityDefinitions": {
+        "BearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "Enter your JWT token in the format **Bearer &lt;token&gt;**.",
+        }
+    },
+    "security": [{"BearerAuth": []}],
+}
+swagger = Swagger(app, config=swagger_config)
 
 init_db()
 
@@ -135,12 +159,8 @@ def delete_account():
     ---
     tags:
       - User Management
-    parameters:
-      - in: header
-        name: Authorization
-        required: true
-        type: string
-        description: Bearer token for user authentication.
+    security:
+      - BearerAuth: []  # Require Authorization header
     responses:
       200:
         description: User account deleted successfully.
