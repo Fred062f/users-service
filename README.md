@@ -1,4 +1,4 @@
-# Flask User Management API
+# User Service API
 
 This project is a simple Flask-based API that manages user authentication and provides JWT token-based security for certain routes. It includes the following endpoints:
 
@@ -21,7 +21,7 @@ To get started with the API, clone the repository and install the required depen
 
 ```bash
 git clone https://github.com/Fred062f/users-service.git
-cd flask-user-management-api
+cd users-service
 pip install -r requirements.txt
 ```
 
