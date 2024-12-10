@@ -198,29 +198,7 @@ def endpoints():
       - Utility
     responses:
       200:
-        description: A list of all available routes with their methods, descriptions, and whether a JWT token is required.
-        schema:
-          type: array
-          items:
-            type: object
-            properties:
-              rule:
-                type: string
-                description: The URL rule (route).
-              endpoint:
-                type: string
-                description: The endpoint function name.
-              methods:
-                type: array
-                items:
-                  type: string
-                  description: Allowed HTTP methods for the route.
-              description:
-                type: string
-                description: The truncated docstring of the endpoint function, if available.
-              jwt_required:
-                type: boolean
-                description: Whether the route requires a JWT token.
+        description: A list of all available routes with their descriptions, methods, and JWT token requirements.
     """
     excluded_endpoints = {'static', 'flasgger.static', 'flasgger.oauth_redirect', 'flasgger.<lambda>', 'flasgger.apispec'}
     excluded_methods = {'HEAD', 'OPTIONS'}
