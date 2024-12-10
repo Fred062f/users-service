@@ -1,4 +1,4 @@
-## Flask JWT Authentication API with Swagger Documentation
+## Flask JWT Authentication API
 
 This is a Flask application that implements user registration, login, and account deletion with JWT-based authentication. It also provides an endpoint to list all available API routes with their descriptions and access requirements.
 
