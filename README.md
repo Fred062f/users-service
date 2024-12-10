@@ -20,7 +20,7 @@ This project is a simple Flask-based API that manages user authentication and pr
 To get started with the API, clone the repository and install the required dependencies:
 
 ```bash
-git clone [https://github.com/your-repo/flask-user-management-api.git](https://github.com/Fred062f/users-service.git)
+git clone https://github.com/Fred062f/users-service.git
 cd flask-user-management-api
 pip install -r requirements.txt
 ```
