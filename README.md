@@ -11,14 +11,6 @@ This is a Flask application that implements user registration, login, and accoun
 * API endpoint documentation with Swagger
 * Endpoint listing with descriptions and JWT requirements
 
-**Dependencies:**
-
-* Flask
-* Flask-JWT-Extended
-* Flask-SQLAlchemy (assumed, based on sqlite3 usage)
-* Flask-Swagger (flasgger)
-* dotenv
-
 **Environment Variables:**
 
 * `DATABASE`: Path to the SQLite database file.
@@ -58,13 +50,3 @@ python app.py
 **Using Swagger Documentation:**
 
 Swagger documentation is available at `http://localhost:5000/apidocs`. You can explore API endpoints, their parameters, responses, and authorization requirements.
-
-**Additional Notes:**
-
-* This example uses a simple SQLite database for user storage. Consider using a more robust database solution for production environments.
-* The provided secret key should be replaced with a strong, random string for security purposes.
-
-**For further development:**
-
-* Implement additional user management features (e.g., update profile).
-* Integrate with external authentication providers.
