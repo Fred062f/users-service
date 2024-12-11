@@ -145,7 +145,9 @@ def login():
 
     if user:
         access_token = create_access_token(identity=username, fresh=True)
-        return jsonify({'token': access_token}), 200
+        response = jsonify({'token': access_token})
+        response.headers['Authorization'] = f"Bearer {access_token}"
+        return response, 200
     else:
         return jsonify({'message': 'Invalid username or password'}), 401
 
