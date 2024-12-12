@@ -6,7 +6,7 @@ This project is a simple Flask-based API that manages user authentication and pr
 - **Login** (`/login`): Authenticate a user and generate a JWT token.
 - **Delete account** (`/delete`): Delete the authenticated user's account.
 - **Restricted access** (`/restricted`): A test route to check if the user is authenticated.
-- **List available endpoints** (`/endpoints`): Get a list of all available API routes with their descriptions and JWT token requirements.
+- **List available endpoints** (`/`): Get a list of all available API routes with their descriptions and JWT token requirements.
 
 ## Features
 
