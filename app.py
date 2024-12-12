@@ -191,7 +191,7 @@ def restricted():
     return jsonify({'message': f'Hello, {current_user}! You have access to this restricted route.'}), 200
 
 
-@app.route('/endpoints', methods=['GET'])
+@app.route('/', methods=['GET'])
 def endpoints():
     """
     List all available endpoints in the API, including their descriptions, methods, and JWT token requirements.
